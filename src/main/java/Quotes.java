@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,10 +12,9 @@ public class DriverTest {
     public static void main(String[] args) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
-
         WebDriver driver = new ChromeDriver();
 
-        driver.get("https://www.litres.ru/dzhon-keho/podsoznanie-mozhet-vse/citaty/");
+        driver.get("https://www.litres.ru/viktor-frankl-2/skazat-zhizni-da-psiholog-v-konclagere-147113/citaty/");
 
         List<String> quotesPotok;
         quotesPotok = returnQuotes(driver);
@@ -30,7 +28,6 @@ public class DriverTest {
 
 
     }
-
 
     public static List<String> returnQuotes(WebDriver driver) throws InterruptedException {
         String l_moreQuotesButton = "//a[@id='quotes__more-button']";
@@ -52,6 +49,5 @@ public class DriverTest {
         return quotes;
 
     }
-
 
 }
